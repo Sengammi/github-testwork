@@ -18,19 +18,19 @@
 }
 @font-face {
   font-family: industryMedium;
-  src: url(/fonts/Industry-Medium.29d9aff6.ttf);
+  src: url(/fonts/Industry-Medium.ttf);
 }
 @font-face {
   font-family: graphikCompact;
-  src: url(/fonts/GraphikCompact-Regular.886e08d5.ttf);
+  src: url(/fonts/GraphikCompRegular.ttf);
 }
 @font-face {
   font-family: graphikCompactMedium;
-  src: url(/fonts/GraphikCompact-Medium.076d3344.ttf);
+  src: url(/fonts/GraphikCompMedium.ttf);
 }
 @font-face {
   font-family: graphikCompactBold;
-  src: url(/fonts/GraphikCompact-Bold.6a0f516f.ttf);
+  src: url(/fonts/GraphikCompBold.ttf);
 }
 :root {
   --black-0: #211f26;
@@ -126,6 +126,14 @@ h6 {
   color: #fff;
 }
 
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
 span {
   display: block;
 }
@@ -139,7 +147,7 @@ span {
 
 .site-body {
   height: 100vh;
-  padding: 0px;
+  padding: 0;
   display: flex;
   flex-direction: row;
   justify-content: left;
@@ -166,14 +174,152 @@ span {
   padding-right: 28px;
   padding-top: 20px;
 }
+.site-body .full-content .central-frame .container {
+  border: 1px solid var(--gray-1);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  z-index: 2;
+  padding: 0;
+  border-bottom: 0;
+  border-radius: 38px 38px 0 0;
+}
+.site-body .full-content .central-frame .container .main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-basis: auto;
+  color: white;
+}
 .site-body .full-content .central-frame .container .main .head-tabs-container {
+  display: flex;
   width: 100%;
   height: 60px;
-  background-color: #1b1377;
+  position: relative;
+  background: var(--black-6);
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+.site-body .full-content .central-frame .container .main .head-tabs-container::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  width: 80px;
+  height: 100%;
+  border-radius: 60px 0 0;
+  background: linear-gradient(90deg, rgb(30, 29, 37) 80%, rgba(30, 29, 37, 0) 100%);
+}
+.site-body .full-content .central-frame .container .main .head-tabs-container::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 101;
+  width: 40px;
+  height: 100%;
+  border-radius: 0 60px 0 0;
+  background: linear-gradient(270deg, rgb(30, 29, 37) 40%, rgba(30, 29, 37, 0) 100%);
+}
+.site-body .full-content .central-frame .container .main .head-tabs-container .nav-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  pointer-events: none;
+}
+.site-body .full-content .central-frame .container .main .head-tabs-container .nav-bg .nav-bg-icons {
+  position: absolute;
+  background: transparent;
+  border-radius: 38px 38px 0 0;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.site-body .full-content .central-frame .container .main .head-tabs-container .nav-bg .nav-bg-icons .nav-border-icon {
+  position: absolute;
+  width: 41px;
+  height: 41px;
+  top: -2.5px;
+}
+.site-body .full-content .central-frame .container .main .head-tabs-container .nav-bg .nav-bg-icons .nav-border-icon.left-icon {
+  left: -2px;
+}
+.site-body .full-content .central-frame .container .main .head-tabs-container .nav-bg .nav-bg-icons .nav-border-icon.right-icon {
+  right: -2px;
+  transform: scaleX(-1);
+}
+.site-body .full-content .central-frame .container .main .head-tabs-container .nav-bar {
+  position: relative;
+  width: calc(100% - 10px);
+  height: 100%;
+}
+.site-body .full-content .central-frame .container .main .head-tabs-container .nav-bar .nav-elements {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.site-body .full-content .central-frame .container .main .head-tabs-container .nav-bar .nav-elements .nav-pages {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: relative;
+  font-family: industryMedium;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 21px;
+  min-width: 155px;
+  cursor: pointer;
+  outline: none;
+  padding: 0 32px;
+}
+.site-body .full-content .central-frame .container .main .head-tabs-container .nav-bar .nav-elements .nav-pages p {
+  white-space: nowrap;
+  text-align: center;
+  opacity: 0.2;
+  color: white;
+  transition: all 150ms ease-in-out 0s;
+}
+.site-body .full-content .central-frame .container .main .head-tabs-container .nav-bar .nav-elements .nav-pages.selected p {
+  opacity: 1;
+}
+.site-body .full-content .central-frame .container .main .head-tabs-container .nav-bar .nav-elements .nav-pages.selected .tabBorder {
+  height: 5px;
+}
+.site-body .full-content .central-frame .container .main .head-tabs-container .nav-bar .nav-elements .nav-pages:hover p {
+  opacity: 1;
+  color: var(--gold-0);
+}
+.site-body .full-content .central-frame .container .main .head-tabs-container .nav-bar .nav-elements .nav-pages:hover .tabBorder {
+  background: var(--gold-0);
+}
+.site-body .full-content .central-frame .container .main .head-tabs-container .nav-bar .nav-elements .nav-pages .tabBorder {
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  height: 1px;
+  background: var(--black-1);
+  transition: all 150ms ease-in-out 0s;
 }
 
 .page-elements {
-  position: relative;
   height: 100%;
   width: 100%;
   background-color: rgb(5, 7, 10);
@@ -214,7 +360,7 @@ span {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(5, 7, 10, 0), rgba(5, 7, 10, 0) 60%, rgb(5, 7, 10) 100%);
+  background: linear-gradient(rgba(5, 7, 10, 0), rgba(5, 7, 10, 0) 20%, rgb(5, 7, 10) 100%);
   z-index: 1;
 }
 .page-elements .big-video {
@@ -225,14 +371,14 @@ span {
 }
 .page-elements .content-bar {
   position: relative;
-  border-radius: 14px 14px 0px 0px;
+  border-radius: 14px 14px 0 0;
   -webkit-box-flex: 1;
   flex-grow: 1;
-  padding: 0px 32px;
+  padding: 0 32px;
   text-align: center;
   background-color: rgb(24, 23, 31);
   z-index: 2;
-  margin: -64px 32px 0px;
+  margin: -96px 32px 0;
 }
 .page-elements .content-bar .content {
   overflow: hidden;
@@ -241,7 +387,7 @@ span {
   opacity: 0.09;
   width: 100%;
   height: 100%;
-  margin: 0px -32px;
+  margin: 0 -32px;
 }
 .page-elements .content-bar .content span {
   box-sizing: border-box;
@@ -251,22 +397,22 @@ span {
   height: initial;
   background: none;
   opacity: 1;
-  border: 0px;
-  margin: 0px;
-  padding: 0px;
+  border: 0;
+  margin: 0;
+  padding: 0;
   position: absolute;
-  inset: 0px;
+  inset: 0;
 }
 .page-elements .content-bar .content span img {
   position: absolute;
-  inset: 0px;
+  inset: 0;
   box-sizing: border-box;
-  padding: 0px;
+  padding: 0;
   border: none;
   margin: auto;
   display: block;
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
   min-width: 100%;
   max-width: 100%;
   min-height: 100%;
@@ -280,7 +426,7 @@ span {
   text-transform: uppercase;
   font-family: tungstenLight;
   letter-spacing: 0.005em;
-  text-shadow: rgb(24, 23, 31) 0px 0px 60px;
+  text-shadow: rgb(24, 23, 31) 0 0 60px;
 }
 .page-elements .content-bar .big-text {
   font-size: 52px;
@@ -288,14 +434,14 @@ span {
   margin-bottom: 55px;
   font-family: tungstenLight;
   letter-spacing: 0.005em;
-  text-shadow: rgb(24, 23, 31) 0px 0px 60px;
+  text-shadow: rgb(24, 23, 31) 0 0 60px;
 }
-.page-elements .content-bar .button-container {
+.page-elements .content-bar .button-frame {
   height: 72px;
   margin-top: 55px;
   margin-bottom: 40px;
 }
-.page-elements .content-bar .button-container .big-button {
+.page-elements .content-bar .button-frame .button-container {
   width: 320px;
   height: 72px;
   border-radius: 30px 14px 14px 14px;
@@ -303,6 +449,66 @@ span {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+}
+.page-elements .content-bar .button-frame .button-container .button-link {
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  height: 72px;
+  min-width: 320px;
+  background-size: 250% 100%;
+  --bar-width: 1px;
+  margin: 0;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  outline: none;
+  padding: 0 25px;
+  border-radius: 28px 12px 12px;
+  background-position: 100% 50%;
+  transition: all 150ms ease-in-out 0s;
+}
+.page-elements .content-bar .button-frame .button-container .button-link::after {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  height: 33px;
+  width: 33px;
+  background-image: url("/svg/border.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+}
+.page-elements .content-bar .button-frame .button-container .button-link:hover {
+  background-position: 0 50%;
+  background-color: var(--gold-0);
+}
+.page-elements .content-bar .button-frame .button-container .button-link div .button-primary-text {
+  font-family: graphikCompactBold;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--black-4);
+  z-index: 1;
+}
+.page-elements .content-bar .button-frame .button-container .button-link div .button-secondary-text {
+  position: relative;
+  top: 2px;
+  font-family: tungstenLight;
+  font-size: 30px;
+  line-height: 28px;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--black-4);
+  z-index: 1;
 }
 .page-elements .content-bar .bottom-links {
   display: flex;
@@ -338,7 +544,7 @@ span {
 }
 .page-elements .content-bar .bottom-links .player-resources .colon-title .small-hr, .page-elements .content-bar .bottom-links .legal-information .colon-title .small-hr {
   width: 100%;
-  height: 0px;
+  height: 0;
   opacity: 0.1;
   border-top: 1px solid rgb(255, 255, 255);
 }
@@ -349,6 +555,9 @@ span {
   -webkit-box-pack: justify;
   justify-content: space-between;
   gap: 50px;
+}
+.page-elements .content-bar .bottom-links .group-links svg {
+  margin-right: 8px;
 }
 .page-elements .content-bar .bottom-links .group-links .link-text {
   display: flex;
@@ -387,7 +596,7 @@ span {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
-  font-family: graphikCompactMedium;
+  font-family: graphikCompact;
   text-transform: uppercase;
   font-size: 18px;
   line-height: 24px;
