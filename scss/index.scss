@@ -199,7 +199,7 @@ span {
         z-index: 5;
         .element-burger{
           cursor: pointer;
-          margin: 8px 0px 8px 18px;
+          padding: 8px 0px 8px 18px;
           transition: opacity 150ms ease-in-out 0s;
           z-index: 5;
           min-height: 37px;
@@ -269,7 +269,7 @@ span {
             .nav-bg{
               position: absolute;
               width: 100%;
-              z-index: 200;
+              z-index: 100;
               pointer-events: none;
               .nav-bg-icons{
                 position: absolute;
@@ -291,20 +291,6 @@ span {
                     right: -2px;
                     transform: scaleX(-1);
                   }
-                  //span{
-                  //  box-sizing: border-box;
-                  //  display: block;
-                  //  overflow: hidden;
-                  //  width: initial;
-                  //  height: initial;
-                  //  background: none;
-                  //  opacity: 1;
-                  //  border: 0;
-                  //  margin: 0;
-                  //  padding: 0;
-                  //  position: absolute;
-                  //  inset: 0;
-                  //}
                 }
               }
             }
@@ -861,83 +847,86 @@ span {
 
 
 
-  /*# sourceMappingURL=index.css.map */
-  /* The sidebar menu */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+@media screen and (max-height: 450px) {
   .sidenav {
-    /*height: 100%; !* Full-height: remove this if you want "auto" height *!*/
-    /*width: 80px; !* Set the width of the sidebar *!*/
-    /*position: fixed; !* Fixed Sidebar (stay in place on scroll) *!*/
-    /*z-index: 1; !* Stay on top *!*/
-    /*top: 0; !* Stay at the top *!*/
-    /*left: 0;*/
-    /*background-color: #111; !* Black *!*/
-    /*overflow-x: hidden; !* Disable horizontal scroll *!*/
-    /*padding-top: 20px;*/
+    padding-top: 15px;
   }
-
-  /* The navigation menu links */
   .sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    color: #818181;
-    display: block;
+    font-size: 18px;
   }
+}
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 
-  /* When you mouse over the navigation links, change their color */
-  .sidenav a:hover {
-    color: #f1f1f1;
+.dropdown-content {
+  display: none;
+  position: relative;
+  left: 80px;
+  height: 100%;
+  z-index: 99;
+  padding-top: 130px;
+  flex-direction: column;
+  color: white;
+  font-family: tungstenBook;
+  margin-bottom: 40px;
+}
+
+.dropdown-content img {
+  opacity: 0.6;
+}
+
+.dropdown-content a {
+  color: #a6a6a6;
+  height: 55px;
+  text-decoration: none;
+  padding: 10px 15px 10px 0;
+  display: block;
+  text-align: center;
+  font-size: 28px;
+}
+
+.dropdown-content a:hover {
+  color: #dddcdd;
+}
+
+.show {
+  display: block;
+}
+.dropbtn{
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  margin: 45px 25px;
+  text-align: center;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgb3BhY2l0eT0iMC41Ij4KPHJlY3QgeD0iMSIgeT0iNSIgd2lkdGg9IjIyIiBoZWlnaHQ9IjIiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHg9IjEiIHk9IjExIiB3aWR0aD0iMjIiIGhlaWdodD0iMiIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iMSIgeT0iMTciIHdpZHRoPSIyMiIgaGVpZ2h0PSIyIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+Cjwvc3ZnPgo=')
+}
+.burger-pages .element-burger{
+  fill: #dddcdd;
+  opacity: 0.6;
+}
+.burger-pages .element-burger:hover {
+  transition: opacity 3s ease-in-out 0s;
+  opacity: 1;
+}
+.element-burger {
+  &.selected{
+    height: 70px;
+    border: 1px solid;
+    border-right: white;
+    border-left: white;
   }
-
-  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
-
-  /* Dropdown button on hover & focus */
-  .dropbtn:hover, .dropbtn:focus {
-    /*background-color: #2980B9;*/
-  }
-
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-    /*position: relative;*/
-    /*display: inline-block;*/
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-    display: none;
-    position: relative;
-    left: 80px;
-    height: 100%;
-    z-index: 99;
-    padding-top: 130px;
-    flex-direction: column;
-    color: white;
-    font-family: tungstenBook;
-    margin-bottom: 40px;
-  }
-
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    color: #a6a6a6;
-    height: 55px;
-    text-decoration: none;
-    padding: 10px 15px 10px 0;
-    display: block;
-    text-align: center;
-    font-size: 28px;
-  }
-
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover
-  {
-    color: white;
-  }
-
-  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-  .show {display:block;}
+}

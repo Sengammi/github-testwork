@@ -10,23 +10,23 @@
     <div class="full-content">
         <div class="left-frame dropdown">
             <div class="burger-menu-container">
-                <button id="button_burger" onclick="myFunction()" class="dropbtn">Dropdown</button>
+                <div id="button_burger" onclick="burger()" class="dropbtn">     </div>
             </div>
             <div class="burger-pages">
-                <div class="element-burger">
-                    <a href="#"><img src="./svg/home-32.svg"></a>
+                <div class="element-burger home selected">
+                    <a class="burger-icons" href="#"><img src="./svg/home-32.svg"></a>
                 </div>
-                <div class="element-burger">
-                    <a href="#"><img src="./svg/leaderboards-32.svg"></a>
+                <div class="element-burger leaderboards">
+                    <a class="burger-icons" href="#"><img src="./svg/leaderboards-32.svg"></a>
                 </div>
-                <div class="element-burger">
-                    <a href="#"><img src="./svg/marketplace-32.svg"></a>
+                <div class="element-burger marketplace">
+                    <a class="burger-icons" href="#"><img src="./svg/marketplace-32.svg"></a>
                 </div>
-                <div class="element-burger">
-                    <a href="#"><img src="./svg/inventory-32.svg"></a>
+                <div class="element-burger inventory">
+                    <a class="burger-icons" href="#"><img src="./svg/inventory-32.svg"></a>
                 </div>
-                <div class="element-burger">
-                    <a href="#"><img src="./svg/faction-fleet-32.svg"></a>
+                <div class="element-burger faction-fleet">
+                    <a class="burger-icons" href="#"><img src="./svg/faction-fleet-32.svg"></a>
                 </div>
             </div>
         </div>
@@ -34,19 +34,19 @@
             <div class="top-space">
             </div>
             <div class="burger-pages right">
-                <div class="element-burger">
+                <div class="element-burger home selected">
                     <a href="#">Home</a>
                 </div>
-                <div class="element-burger">
+                <div class="element-burger   leaderboards">
                     <a href="#">Leaderboards</a>
-                <div class="element-burger">
+                </div>
+                <div class="element-burger marketplace">
                     <a href="#">Marketplace</a>
                 </div>
-                    <div class="element-burger">
-                        <a href="#">Inventory</a>
-                    </div>
+                <div class="element-burger  inventory">
+                    <a href="#">Inventory</a>
                 </div>
-                <div class="element-burger">
+                <div class="element-burger faction-fleet">
                     <a href="#">Faction Fleet</a>
                 </div>
             </div>
@@ -105,7 +105,7 @@
                                 <div class="content-bar">
                                     <div class="content">
                                             <span>
-                                                <img src="/svg/circles.svg" alt="">
+<!--                                                <img src="/svg/circles.svg" alt="">-->
                                             </span>
                                     </div>
                                     <h1 class="large-text">Gain Your Competitive Edge</h1>
@@ -188,12 +188,9 @@
 
     // Close the dropdown menu if the user clicks outside of it
     document.querySelector('#button_burger').onclick = function(event) {
-        console.log('123123123')
         document.getElementById("myDropdown").classList.toggle("show");
-
         if (!event.target.matches('.dropbtn')) {
-
-            let dropdowns = document.getElementsByClassName("dropdown-content");
+                let dropdowns = document.getElementsByClassName("dropdown-content");
             let i;
             for (i = 0; i < dropdowns.length; i++) {
                 let openDropdown = dropdowns[i];
